@@ -222,7 +222,7 @@ class NewTestCase(TestCase):
                     },
             "cardHolderName": "Testy McTester"
         }
-        print(input)
+
         output = {
             "description": "test description",
             "exp_month": 12,
