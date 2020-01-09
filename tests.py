@@ -212,13 +212,13 @@ class NewTestCase(TestCase):
              "expMonth": 12,
              "expYear": 2020,
              "billingAddress": {
-                        "address1": "Worldpay",
-                        "address2": "1 Milton Road",
+                        "address1": "1 Milton Road",
+                        "address2": "apt #14",
                         "address3": "The Science Park",
                         "postalCode": "CB4 0WE",
-                        "city": "Cambridge",
-                        "state": "Cambs",
-                        "countryCode": "GB"
+                        "city": "Los Angeles",
+                        "state": "LA",
+                        "countryCode": "US"
                     },
             "cardHolderName": "Testy McTester"
         }
@@ -228,13 +228,13 @@ class NewTestCase(TestCase):
             "exp_month": 12,
             "exp_year": 2020,
             "billing_address": {
-                "address1": "Worldpay",
-                "address2": "1 Milton Road",
+                "address1": "1 Milton Road",
+                "address2": "apt #14",
                 "address3": "The Science Park",
                 "postalCode": "CB4 0WE",
-                "city": "Cambridge",
-                "state": "Cambs",
-                "countryCode": "GB"
+                "city": "Los Angeles",
+                "state": "LA",
+                "countryCode": "US"
             },
             "card_holder_name": "Testy McTester"
         }
