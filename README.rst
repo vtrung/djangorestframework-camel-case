@@ -109,6 +109,7 @@ Underscorize can be set to ignore children of defined keys. Parent key will stil
 ignore_child_keys is defined as a list of keys where underscorize will ignore children
 
 example
+
 .. code-block:: python
 
     REST_FRAMEWORK = {
