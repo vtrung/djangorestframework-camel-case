@@ -84,6 +84,7 @@ By default, the package uses the first case. To use the second case, specify it 
         # ...
         'JSON_UNDERSCOREIZE': {
             'no_underscore_before_number': True,
+            'ignore_child_keys':[]
         },
         # ...
     }
@@ -102,6 +103,22 @@ Alternatively, you can change this behavior on a class level by setting `json_un
         queryset = MyModel.objects.all()
         serializer_class = MySerializer
         parser_classes = (NoUnderscoreBeforeNumberCamelCaseJSONParser,)
+
+
+Underscorize can be set to ignore children of defined keys. Parent key will still be underscoreized
+ignore_child_keys is defined as a list of keys where underscorize will ignore children
+
+example
+.. code-block:: python
+
+    REST_FRAMEWORK = {
+        # ...
+        'JSON_UNDERSCOREIZE': {
+            'no_underscore_before_number': True,
+            'ignore_child_keys':['billingAddress','billing_address']
+        },
+        # ...
+    }
 
 =============
 Running Tests
