@@ -204,3 +204,40 @@ class CamelToUnderscoreQueryDictTestCase(TestCase):
         }
         output_query.update(output)
         self.assertEqual(underscoreize(query_dict), output_query)
+
+class NewTestCase(TestCase):
+    def testConvert(self):
+        input = {
+             "description": "test description",
+             "expMonth": 12,
+             "expYear": 2020,
+             "billingAddress": {
+                        "address1": "Worldpay",
+                        "address2": "1 Milton Road",
+                        "address3": "The Science Park",
+                        "postalCode": "CB4 0WE",
+                        "city": "Cambridge",
+                        "state": "Cambs",
+                        "countryCode": "GB"
+                    },
+            "cardHolderName": "Testy McTester"
+        }
+        print(input)
+        output = {
+            "description": "test description",
+            "exp_month": 12,
+            "exp_year": 2020,
+            "billing_address": {
+                "address1": "Worldpay",
+                "address2": "1 Milton Road",
+                "address3": "The Science Park",
+                "postalCode": "CB4 0WE",
+                "city": "Cambridge",
+                "state": "Cambs",
+                "countryCode": "GB"
+            },
+            "card_holder_name": "Testy McTester"
+        }
+        underscore_input = underscoreize(input, **{"no_underscore_before_number": False,
+                           "ignore_child_keys": ["billingAddress", "billing_address"]})
+        self.assertEqual(underscore_input, output)
