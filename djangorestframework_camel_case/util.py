@@ -64,13 +64,20 @@ def _get_iterable(data):
 
 def underscoreize(data, **options):
     if isinstance(data, dict):
+
+        ignore_keys = options.get("ignore_child_keys") or []
+
         new_dict = {}
         for key, value in _get_iterable(data):
             if isinstance(key, str):
                 new_key = camel_to_underscore(key, **options)
             else:
                 new_key = key
-            new_dict[new_key] = underscoreize(value, **options)
+                
+            if key not in ignore_keys:
+                new_dict[new_key] = underscoreize(value, **options)
+            else:
+                new_dict[new_key] = value
 
         if isinstance(data, QueryDict):
             new_query = QueryDict(mutable=True)
